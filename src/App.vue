@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <Nav></Nav>
+    <Nav v-show="$route.meta.navShow"></Nav>
+    <!-- <Nav></Nav> -->
     <router-view></router-view>
-    <Footer></Footer>
+    <!-- <Footer></Footer> -->
+    <Footer v-show="$route.meta.footShow"></Footer>
   </div>
 </template>
 
