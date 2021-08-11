@@ -1,4 +1,4 @@
-<template class="reg1">
+<template>
   <transition name="slide" mode="out-in">
     <div class="reg">
       <van-nav-bar
@@ -9,68 +9,68 @@
       />
       <van-cell-group>
         <van-field
-          v-model="value1"
+          v-model="captcha"
+          left-icon="phone"
+          placeholder="请输入验证码"
+        />
+        <van-field
+          v-model="phone"
           label="+86"
           left-icon="phone"
           placeholder="请输入手机号"
         />
         <van-field
           type="password"
-          v-model="value2"
+          v-model="password"
           clearable
           left-icon="lock"
           placeholder="设置登录密码不少于6位"
         />
+        <van-field
+          type="type"
+          v-model="nickname"
+          clearable
+          left-icon="lock"
+          placeholder="请输入昵称"
+        />
       </van-cell-group>
-      <van-button round type="info" color="#d33a31" @click="regApi"
-        >下一步</van-button
+      <van-button round type="info" color="#d33a31" @click="zhuceApi"
+        >注册</van-button
       >
-      <van-divider>其他注册方式</van-divider>
     </div>
   </transition>
 </template>
 
 <script>
-// import { regApi } from "../../utils/request";
 import axios from "axios";
 export default {
   props: {},
   components: {},
   data() {
     return {
-      value1: "", //phone
-      value2: "",
+      captcha: "",
+      phone: "",
+      password: "",
+      nickname: "",
     };
   },
   computed: {},
   watch: {},
   methods: {
-    async regApi() {
-      /*  const result = await regApi({
-        phone: this.value1,
-      }); */
+    async zhuceApi() {
       const result = await axios.get(
-        "http://120.55.162.133:3000/captcha/sent",
+        "http://120.55.162.133:3000/register/cellphone",
         {
           params: {
-            phone: this.value1,
+            captcha: this.captcha,
+            phone: this.phone,
+            password: this.password,
+            nickname: this.nickname,
           },
         }
       );
       console.log(result);
-      console.log(this.value1);
-      //   if (result) {
-      this.$router.push({
-        path: "/yzcode",
-        query: {
-          phone: this.value1,
-        },
-      });
-      //   }
     },
-    /*   back() {
-      this.$router.go(-1);
-    }, */
   },
   beforeCreate() {},
   beforeMount() {},
@@ -78,7 +78,7 @@ export default {
   beforeDestroy() {},
 };
 </script> 
-<style>
+<style >
 .reg .van-nav-bar__text,
 .van-nav-bar .van-icon {
   color: #fefcfc;

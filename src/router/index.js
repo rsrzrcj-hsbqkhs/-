@@ -21,11 +21,11 @@ const router = new VueRouter({
       path: "/register",
       name: "Register",
       component: () => import("../views/register"),
-      /*    children: [
+      /*  children: [
         {
           path: "yzcode",
           name: "Yzcode",
-          component: () => import("@/views/yzcode/"),
+          component: () => import("../views/yzcode"),
         },
       ], */
     },
@@ -33,6 +33,11 @@ const router = new VueRouter({
       path: "/yzcode",
       name: "Yzcode",
       component: () => import("../views/yzcode"),
+    },
+    {
+      path: "/zhuce",
+      name: "Zhuce",
+      component: () => import("../views/zhuce"),
     },
     {
       path: "/login",
