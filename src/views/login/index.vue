@@ -10,7 +10,7 @@
       <van-cell-group>
         <van-field
           v-model="value1"
-          label="+86"
+          label="+865555"
           left-icon="phone"
           placeholder="请输入手机号1"
         />
