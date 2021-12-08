@@ -49,7 +49,7 @@ const router = new VueRouter({
       name: "Find",
       component: () => import("../views/find"),
       meta: {
-        navShow: true,
+        // navShow: true,
         footShow: true,
       },
     },

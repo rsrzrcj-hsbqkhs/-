@@ -6,7 +6,7 @@
         >手机号登录</van-button
       >
       <van-button plain round type="info" block color="#e20000" @click="goReg"
-        >注册</van-button
+        >注册111</van-button
       >
       <van-divider>其他登录方式</van-divider>
     </div>
@@ -36,8 +36,8 @@ export default {
   beforeDestroy() {},
 };
 </script> 
-<style>
-img {
+<style  scoped>
+.reg_loading img {
   display: flex;
   /* justify-content: center; */
   margin: 60px auto;

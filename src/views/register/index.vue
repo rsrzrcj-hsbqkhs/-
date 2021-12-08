@@ -1,4 +1,4 @@
-<template class="reg1">
+<template>
   <transition name="slide" mode="out-in">
     <div class="reg">
       <van-nav-bar
@@ -80,7 +80,7 @@ export default {
 </script> 
 <style>
 .reg .van-nav-bar__text,
-.van-nav-bar .van-icon {
+.reg .van-nav-bar .van-icon {
   color: #fefcfc;
 }
 .reg .van-icon-phone,

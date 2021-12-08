@@ -12,7 +12,7 @@
           v-model="value1"
           label="+86"
           left-icon="phone"
-          placeholder="请输入手机号"
+          placeholder="请输入手机号1"
         />
         <van-field
           v-model="value2"
